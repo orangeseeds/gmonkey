@@ -14,16 +14,16 @@ const (
 	IDENT = "IDENT" // identifier
 	INT   = "INT"
 
-	ASSIGN = "ASSIGN"
-	PLUS   = "PLUS"
+	ASSIGN = "="
+	PLUS   = "+"
 
-	COMMA     = "COMMA"
-	SEMICOLON = "SEMICOLON"
+	COMMA     = ","
+	SEMICOLON = ";"
 
-	LPAREN = "LPAREN"
-	RPAREN = "RPAREN"
-	LBRACE = "LBRACE"
-	RBRACE = "RBRACE"
+	LPAREN = "("
+	RPAREN = ")"
+	LBRACE = "{"
+	RBRACE = "}"
 
 	FUNCTION = "FUNCTION"
 	LET      = "LET"
