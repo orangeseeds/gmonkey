@@ -11,8 +11,8 @@ const (
 	ILLEGAL = "ILLEGAL"
 	EOF     = "EOF"
 
-	INDENT = "INDENT" // identifier
-	INT    = "INT"
+	IDENT = "IDENT" // identifier
+	INT   = "INT"
 
 	ASSIGN = "ASSIGN"
 	PLUS   = "PLUS"
@@ -28,3 +28,15 @@ const (
 	FUNCTION = "FUNCTION"
 	LET      = "LET"
 )
+
+var keywords = map[string]TokenType{
+	"fn":  FUNCTION,
+	"let": LET,
+}
+
+func LooupIdent(ident string) TokenType {
+	if tok, ok := keywords[ident]; ok {
+		return tok
+	}
+	return IDENT
+}
