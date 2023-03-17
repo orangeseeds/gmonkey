@@ -1,7 +1,6 @@
 package lexer
 
 import (
-	"fmt"
 	"testing"
 
 	"github.com/orangeseeds/gmonkey/token"
@@ -105,7 +104,7 @@ func TestNewToken(t *testing.T) {
 	for i, tt := range tests {
 		tok := l.NextToken()
 
-		fmt.Printf("%v", tok)
+		// fmt.Printf("%v", tok)
 		if tok.Type != tt.expectedType {
 			t.Fatalf("tests[%d] - tokentype wrong. expeced %q, got=%q",
 				i, tt.expectedType, tok.Type)

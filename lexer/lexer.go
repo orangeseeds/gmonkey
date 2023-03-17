@@ -7,8 +7,8 @@ import (
 type Lexer struct {
 	input        string
 	position     int  // current position in input
-	readPosition int  // current reading position in input(pos of current char)
-	ch           byte // current character under examination(pos after the current char)
+	readPosition int  // current reading position in input(position of current char)
+	ch           byte // current character under examination(position after the current char)
 }
 
 func New(input string) *Lexer {
@@ -83,7 +83,7 @@ func (l *Lexer) NextToken() token.Token {
 	default:
 		if isLetter(l.ch) {
 			tok.Literal = l.readIdentifier()
-			tok.Type = token.LooupIdent(tok.Literal)
+			tok.Type = token.LookupIdent(tok.Literal)
 			return tok
 		} else if isDigit(l.ch) {
 			tok.Literal = l.readNumber()
